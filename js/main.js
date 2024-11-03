@@ -39,10 +39,9 @@
 
     function closeModal(e) {
         const target = e.target
-
+        e.preventDefault() 
         if (target.closest('.modal__close') || target.classList.contains('modal') || target.classList.contains('button') || e.code === 'Escape'
         )
-        e.preventDefault() 
             document.body.classList.remove('body--opened-modal')
     }
 
@@ -150,6 +149,7 @@
     new Swiper('.testimonials__swiper', {
         spaceBetween: 0,
         slidesPerView: 1,
+        initialSlide: 1,	
         centeredSlides: true,
 
         navigation: {
